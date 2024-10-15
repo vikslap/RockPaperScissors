@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <script>
+
+        function CompGuess(){
+            choice = Math.floor(Math.random() * 10)
+            if (choice < 3) return "ROCK"
+            if (choice > 6) return "PAPER}"
+            else return "SCISSOR"
+        }
+
+        function getHumanChoice(){
+            human_choice_entry = prompt("Enter your choice: ")
+            return human_choice_entry
+        }
+
+        function playRound(humanChoice,computerChoice){
+            if (computerChoice == "ROCK" && humanChoice == "PAPER"){
+                humanScore = humanScore + 1
+
+            }
+
+            if (computerChoice == "ROCK" && humanChoice == "SCISSOR"){
+                computerScore = computerScore + 1
+            }
+
+            if (computerChoice == "PAPER" && humanChoice == "SCISSOR"){
+                humanScore = humanScore + 1
+
+            }
+
+            if (computerChoice == "PAPER" && humanChoice == "ROCK"){
+                computerScore = computerScore + 1
+            }
+
+            if (computerChoice == "SCISSOR" && humanChoice == "ROCK"){
+                humanScore = humanScore + 1
+
+            }
+
+            if (computerChoice == "SCISSOR" && humanChoice == "PAPER"){
+                computerScore = computerScore + 1
+            }
+
+            console.log("Human Score: ",humanScore, "Computer Score: ",computerScore)
+
+            if (humanScore>computerScore){
+                console.log("You WIN!")
+            }
+            if (humanScore < computerScore){
+                console.log("You LOSE!")
+            }
+            if (humanScore == computerScore){
+                console.log("It's a DRAW!")
+            }
+        }
+
+        let humanScore = 0
+        let computerScore =0
+        let x = CompGuess()
+        let y = getHumanChoice()
+
+        playRound(y.toUpperCase(),x)
+        
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+    
+</body>
+</html>
