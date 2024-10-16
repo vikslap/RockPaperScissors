@@ -7,9 +7,11 @@
 </head>
 <body>
 
-
+    
     <script>
+        // javascript code starts from here
 
+        //determines the computer's choice
         function CompGuess(){
             //console.log("CompGuess Called")
             choice = Math.floor(Math.random() * 10)
@@ -18,21 +20,22 @@
             else return "SCISSOR"
         }
 
+        // prompts the human player to make his choice
         function getHumanChoice(){
             human_choice_entry = prompt("Enter your choice: ")
             return human_choice_entry
         }
-
 
         function playGame(){
             let count = 1
             let humanScore = 0
             let computerScore =0
 
+            // the logic to determine the winner for one round
+
             function playRound(humanChoice,computerChoice){
                 if (computerChoice == "ROCK" && humanChoice == "PAPER"){
                     humanScore = humanScore + 1
-    
                 }
     
                 if (computerChoice == "ROCK" && humanChoice == "SCISSOR"){
@@ -41,7 +44,6 @@
     
                 if (computerChoice == "PAPER" && humanChoice == "SCISSOR"){
                     humanScore = humanScore + 1
-    
                 }
     
                 if (computerChoice == "PAPER" && humanChoice == "ROCK"){
@@ -50,7 +52,6 @@
     
                 if (computerChoice == "SCISSOR" && humanChoice == "ROCK"){
                     humanScore = humanScore + 1
-    
                 }
     
                 if (computerChoice == "SCISSOR" && humanChoice == "PAPER"){
@@ -58,9 +59,9 @@
                 }
 
                 console.log(`Score Computer Vs Human = ${computerScore}: ${humanScore}`)
-    
             }
-
+            
+            // loops 5 times 
             while (count<6){
                 console.log("Round: ",count)
                 let x = CompGuess()
@@ -69,24 +70,9 @@
                 playRound(y.toUpperCase(),x)
                 count = count + 1
             }
-            
         }
 
         playGame()
-
-        
-        
-
-
-
-
-
-
-
-
-
-
-
     </script>
     
 </body>
